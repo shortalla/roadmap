@@ -3,6 +3,8 @@ import { ISSUES } from './issues';
 import { Issue } from './issue/issue.model';
 import { TaskBoardService } from './shared/task-board.service';
 import { Label } from './label/label.model';
+import { ApiService } from '../core/api/api.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'roadmap-task-board',
@@ -17,10 +19,19 @@ export class TaskBoardComponent implements OnInit {
   labelWidth: number;
   colWidth: number;
   rowHeight: number;
+  
+  // issuesList: Observable<any>;
 
-  constructor(private taskboardService: TaskBoardService) { }
+  constructor(private taskboardService: TaskBoardService,
+              private apiService: ApiService) { }
 
   ngOnInit() {
+
+    // Note: I would usually use an Observable here and use | async in the template
+    // but there's no 'Access-Control-Allow-Origin' header in the response.
+    
+    // this.issuesList = this.apiService.listIssues();
+    
     this.issues = ISSUES.issues.map(
       (issue) => this.taskboardService.makeIssue(issue)
     ).sort((a,b) => a.duedate.getTime() - b.duedate.getTime());
@@ -38,6 +49,8 @@ export class TaskBoardComponent implements OnInit {
    * Applies styling to the task board
    */
   public taskboardStyle(): Object {
+    if (!this.dates)
+      return {};
     const padding = 1;
     const width = this.labelWidth + (this.colWidth * this.dates.length) + (padding * 2);
     return {
