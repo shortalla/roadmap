@@ -1,0 +1,26 @@
+<div
+  class="roadmap-issue"
+  [ngStyle]="issueStyle()">
+  <div class="roadmap-issue__container">
+      <div class="roadmap-issue__header" fxLayout="row" fxLayoutAlign="space-between center">
+        <div class="roadmap-issue__heading" >
+          <span class="roadmap-issue__heading-key">{{issue.key}}</span>
+          <span class="roadmap-issue__heading-summary">{{issue.summary}}</span>
+        </div>
+        <ul class="roadmap-issue__labels">
+          <li class="roadmap-issue__label" *ngFor="let label of issue.labels">
+            {{label}}
+          </li>
+        </ul>
+      </div>
+      <div class="roadmap-issue__time">
+        <span class="roadmap-issue__time-title">Due date:</span>
+        {{issue.duedate|date:'d MMM'}}
+        <span class="roadmap-issue__time-title">Estimation:</span>
+        {{issue.timetracking}}
+      </div>
+      <div class="roadmap-issue__description">
+        {{issue.description}}
+      </div>
+  </div>
+</div>

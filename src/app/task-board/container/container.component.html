@@ -1,3 +1,20 @@
-<p>
-  container works!
-</p>
+<div class="roadmap-container">
+  <div fxFlex="none">
+    <roadmap-date
+      *ngFor="let date of dates"
+      [date]="date"
+      [height]="dateHeight"
+      [width]="colWidth"></roadmap-date>
+    <div
+      class="roadmap-container__content"
+      [ngStyle]="containerStyle()">
+      <roadmap-issue
+        *ngFor="let issue of issues"
+        [issue]="issue"
+        [top]="top(issue)"
+        [left]="left(issue)"
+        [height]="rowHeight"
+        [width]="issueWidth(issue)"></roadmap-issue>
+    </div>
+  </div>
+</div>

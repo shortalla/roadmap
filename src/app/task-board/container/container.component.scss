@@ -1,0 +1,19 @@
+@import '~assets/scss/styles.scss';
+
+.roadmap-container {
+    overflow-x: scroll;
+    box-sizing: border-box;
+}
+
+.roadmap-container__content {
+    background-color: $color-grey;
+    position: relative;
+    box-sizing: border-box;
+    background: repeating-linear-gradient(
+        to right,
+        $color-grey-dark,
+        $color-grey-dark 1px,
+        $color-grey 0px,
+        $color-grey 16px
+    );
+}

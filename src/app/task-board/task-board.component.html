@@ -1,2 +1,26 @@
-<roadmap-label></roadmap-label>
-<roadmap-container></roadmap-container>
+<div
+  class="roadmap-taskboard">
+  <div
+    [ngStyle]="taskboardStyle()"
+    class="roadmap-taskboard__background"
+    fxLayout="row" fxLayoutAlign="start stretch">
+    <div [ngStyle]="spacerStyle()">
+      <roadmap-label
+        *ngFor="let label of labels"
+        [label]="label"
+        [width]="labelWidth"
+        [height]="rowHeight"></roadmap-label>
+    </div>
+    <div
+      [ngStyle]="containerStyle()"
+      class="roadmap-taskboard__container-wrapper">
+      <roadmap-container
+        [dateHeight]="dateHeight"
+        [issues]="issues"
+        [labels]="labels"
+        [dates]="dates"
+        [colWidth]="colWidth"
+        [rowHeight]="rowHeight"></roadmap-container>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+@import '~assets/scss/styles.scss';
+
+.roadmap-issue {
+    &:hover {
+        z-index: 10;
+        .roadmap-issue__container {
+            overflow: visible;
+            height: auto;
+        }
+    }
+}
+
+.roadmap-issue__container {
+    border: 1px solid $color-black;
+    margin: 2px;
+    padding: 4px;
+    min-height: calc(100% - 4px);
+    height: calc(100% - 4px);
+    width: calc(100% - 4px);
+    box-sizing: border-box;
+    background-color: $color-grey-light;
+    overflow: hidden;
+}
+
+.roadmap-issue__header {
+    color: $color-pink;
+    border-bottom: 1px solid $color-pink;
+    font-weight: $font-weight-bold;
+    padding: 4px;
+    flex-wrap: wrap;
+}
+
+.roadmap-issue__heading-key {
+    font-weight: $font-weight-boldest;
+    text-transform: uppercase;
+    font-size: 0.8em;
+}
+
+.roadmap-issue__labels {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.roadmap-issue__label {
+    display: inline-block;
+    margin: 1px;
+    padding: 2px;
+    color: $color-blue;
+    border-radius: 12px;
+    border: 1px solid $color-blue;
+    font-size: 0.6em;
+}
+
+.roadmap-issue__time {
+    font-size: 0.8em;
+    padding: 4px;
+}
+
+.roadmap-issue__time-title {
+    font-weight: $font-weight-lightest;;
+}
+
+.roadmap-issue__description {
+    border-top: 1px dashed $color-pink;
+    font-size: 0.9em;
+    padding: 4px;
+}

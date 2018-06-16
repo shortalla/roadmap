@@ -1,11 +1,14 @@
 @import '~assets/scss/styles.scss';
 
 .roadmap-header {
-    
+    box-shadow: inset 1px 1px 3px $color-grey;
+    background-color: $color-white;
+    border-bottom: 1px solid $color-grey;
 }
 
 .roadmap-header__title {
     margin: 0;
-    padding: 1.25rem;
-    font-size: 1.25rem;
+    padding: 1rem;
+    font-size: $font-size-xxl;
+    color: $color-black;
 }

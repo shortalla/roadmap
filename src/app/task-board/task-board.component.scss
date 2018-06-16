@@ -1,0 +1,16 @@
+@import '~assets/scss/styles.scss';
+
+@media screen and (max-width: 599px) {
+    .roadmap-taskboard {
+        font-size: 10px;
+    }
+}
+
+.roadmap-taskboard__background {
+    margin: 1em;
+    background-color: $color-grey-dark;
+    border: 1px solid $color-black;
+    border-radius: 4px;
+    max-width: calc(100% - 2em);
+    box-sizing: border-box;
+}

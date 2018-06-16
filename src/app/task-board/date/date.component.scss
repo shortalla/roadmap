@@ -1,0 +1,11 @@
+@import '~assets/scss/styles.scss';
+
+.roadmap-date {
+    display: inline-block;
+    color: $color-grey-light;
+    white-space: nowrap;
+}
+
+.roadmap-date__date {
+    font-size: 1.5em;
+}

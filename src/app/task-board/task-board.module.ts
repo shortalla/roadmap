@@ -1,16 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { TaskBoardComponent } from './task-board.component';
 import { ContainerComponent } from './container/container.component';
-import { DeadlineComponent } from './deadline/deadline.component';
 import { LabelComponent } from './label/label.component';
-import { StoryComponent } from './story/story.component';
+import { IssueComponent } from './issue/issue.component';
+import { DateComponent } from './date/date.component';
+import { TaskBoardService } from './shared/task-board.service';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FlexLayoutModule
   ],
-  declarations: [TaskBoardComponent, ContainerComponent, DeadlineComponent, LabelComponent, StoryComponent],
+  declarations: [
+    TaskBoardComponent, 
+    ContainerComponent, 
+    LabelComponent, 
+    IssueComponent, 
+    DateComponent
+  ],
+  providers: [TaskBoardService],
   exports: [TaskBoardComponent]
 })
 export class TaskBoardModule { }
